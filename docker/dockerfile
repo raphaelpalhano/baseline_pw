@@ -1,0 +1,12 @@
+FROM node:16.14 as builder
+
+WORKDIR /pw
+
+COPY package*.json ./
+
+ENV QASE_REPORT=1
+
+RUN npm ci
+
+COPY . .
+

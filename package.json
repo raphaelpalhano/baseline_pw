@@ -1,0 +1,51 @@
+{
+  "name": "zap-ms-automation-playwright",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report && rimraf junit-results && rimraf lighthouse",
+    "test:local": "cross-env environment=dev npx playwright test",
+    "test:ci": "npx playwright test cross-env environment=local",
+    "test:qase": "cross-env QASE_REPORT=1 cross-env environment=dev npx playwright test",
+    "play-report": "npx playwright show-report",
+    "allure-report": "allure generate ./allure-results --clean",
+    "open-report": "npm run allure-report && allure open ./allure-report",
+    "reinstall": "npx playwright install"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "playwright",
+    "playwright-test",
+    "allure report"
+  ],
+  "author": "Raphael",
+  "license": "CC0",
+  "devDependencies": {
+    "@types/node": "^20.10.8",
+    "@types/yargs": "^17.0.32",
+    "@typescript-eslint/parser": "^7.1.1",
+    "allure-commandline": "^2.24.0",
+    "allure-playwright": "^2.8.1",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-playwright": "^0.22.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.1.0",
+    "@playwright/test": "^1.38.0",
+    "ajv": "^8.12.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.3.1",
+    "genson-js": "^0.0.8",
+    "path": "^0.12.7",
+    "playwright-qase-reporter": "^1.2.2",
+    "rimraf": "^5.0.1",
+    "yargs": "^17.7.2"
+  }
+}
