@@ -13,9 +13,6 @@ npm run test:ci
 
 ## Como funciona a hierarquia
 
-## Ms Agentes 
-
-Informações do vendedor (Agente)
 
 
 
